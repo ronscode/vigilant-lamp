@@ -3,17 +3,17 @@ import { fetchChuck } from "./js/fetchChuck.js";
 
 // LOAD THE HOME PAGE JS, which comes from fetchContacts.js
 
-if (window.location.pathname === "/") {
-  console.log("On home page");
+if (window.location.pathname.includes("index")) {
+	console.log("On home page");
 	fetchContacts();
-  
+
 	const addForm = document.getElementById("addForm");
 	const addButton = document.getElementById("addContact");
 	console.log(addContact);
 	addButton.addEventListener("submit", (e) => {
-    e.preventDefault();
+		e.preventDefault();
 		console.log(e);
-    console.log(
+		console.log(
 			Object.values(e).reduce((obj, field) => {
 				obj[field.name] = field.value;
 				return obj;
