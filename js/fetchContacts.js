@@ -10,17 +10,18 @@ async function fetchContacts() {
 
 	contacts.forEach((person) => {
 		console.log(person.first_name);
-		let tempPersonHTML = `
-      <div class="col-4 ">
-        <div class="card" style="width: 18rem;">
-          <img src="${person.avatar}" class="card-img-top" alt="${person.first_name}">
-          <div class="card-body">
-            <h5 class="card-title">${person.first_name} ${person.last_name}</h5>
-            <a href="mailto:${person.email}" class="btn btn-primary">Email</a>
-          </div>
+
+    let tempPersonHTML = `
+      <div class="card text-dark bg-info mb-1 col-3 mx-1" >
+        <div class="card-body">
+        <img src="${person.avatar}" class="img-thumbnail float-end" alt="${person.first_name}">
+          <h5 class="card-title">${person.first_name} ${person.last_name}</h5>
+          <p class="card-text">Laboriosam vel nihil et quas harum aliquam, cupiditate.</p>
+          <a href="mailto:${person.email}" class="btn btn-primary">Email</a>
         </div>
-        </div>
-      </div>`;
+      </div>
+
+    `;
 
 		contactsDIV.innerHTML += tempPersonHTML;
 	});
