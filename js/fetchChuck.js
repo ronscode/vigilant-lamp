@@ -1,30 +1,31 @@
 async function fetchChuck() {
-	const chuckDIV = document.getElementById("contacts");
-	chuckDIV.innerHTML = "";
+	const chuckDIV = document.getElementById("chuckDIV");
+	chuckDIV.innerHTML = `<p>Joke is loading...</p>`;
 	//console.log(chuckDIV);
-	const response = await fetch(
-		"https://api.coingecko.com/api/v3/search/trending"
-	);
+	const response = await fetch("https://api.chucknorris.io/jokes/random");
 	const data = await response.json();
 
-	console.dir("From fetchChuck", data);
-	// const joke = data;
-	// console.log(joke);
+	console.log("From fetchChuck", data);
+	const joke = data;
+	console.log(joke);
 
-	// let tempJokeHTML = `
-	//     <div class="col-4 ">
-	//       <div class="card" style="width: 18rem;">
-	//         <img src="${joke.icon_url}" class="card-img-top" alt="Chuck Joke">
-	//         <div class="card-body">
-	//           <h5 class="card-title">Chuck Norris Joke</h5>
-	//           <p>${joke.value}</p>
-	//         </div>
-	//       </div>
-	//       </div>
-	//     </div>`;
+	let tempJokeHTML = `
+      <div class="col-6 text-center ">
+          <img src="${joke.icon_url}" class="img-thumbnail" alt="Chuck Fact">
+          <figure class="text-center">
+            <blockquote class="blockquote">
+              <p>"${joke.value}"</p>
+            </blockquote>
+            <figcaption class="blockquote-footer">
+              Chuck Norris
+            </figcaption>
+          </figure>
+          </div>
+      </div>`;
 
-	// console.log(tempJokeHTML);
-	// chuckDIV.innerHTML += tempJokeHTML;
+	console.log(tempJokeHTML);
+
+	chuckDIV.innerHTML = tempJokeHTML;
 }
 
 export { fetchChuck };
