@@ -45,13 +45,55 @@
 
 		<!-- MAIN CONTENT -->
 
-		<div class="container-fluid">
-			<h1>Our Contacts</h1>
+		<div class="container">
+			<h1 class="text-center">Our Contacts</h1>
 
-			<div id="contacts" class="row g-3 ">
-				<!-- <div class="col">Column</div> -->
+			<div id="contacts" class="row g-2 justify-content-center"></div>
+
+			<div id="addContact" class="row g-2 justify-content-center">
+				<div class="col-6">
+					<h3 class="text-center">Add Contact</h3>
+					<form id="addForm">
+						<div class="row mb-3">
+							<div class="col mb-3">
+								<input
+									type="text"
+									class="form-control"
+									placeholder="First name"
+									aria-label="First name"
+                  name="first_name"
+								/>
+							</div>
+							<div class="col">
+								<input
+									type="text"
+									class="form-control"
+									placeholder="Last name"
+									aria-label="Last name"
+                  name="last_name"
+								/>
+							</div>
+							<div class="row">
+								<div class="col">
+									<input
+										type="text"
+										class="form-control"
+										placeholder="Image URL"
+										aria-label="Image URL"
+                    name="avatar"
+									/>
+								</div>
+								</div>
+              <div class="row">
+                <div class="col mt-3 text-center">
+                  <button id="addContact" type="submit" class="btn btn-primary">Add Contact</button>
+                </div>
+              </div>
+							</div>
+						</div>
+					</form>
+				</div>
 			</div>
-		
 		</div>
 
 		<script
