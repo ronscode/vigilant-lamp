@@ -1,43 +1,19 @@
 import { fetchContacts } from "./js/fetchContacts.js";
 import { fetchChuck } from "./js/fetchChuck.js";
+import { createContact } from "./js/createContact.js";
 
-// LOAD THE HOME PAGE JS, which comes from fetchContacts.js
 
 if (window.location.pathname.includes("index")) {
-	console.log("On home page");
+
+  // Load the home page JS, which comes from fetchContacts.js
 	fetchContacts();
 
-	const addForm = document.getElementById("addForm");
-	const addButton = document.getElementById("addContact");
-	const contactsDIV = document.getElementById("contacts");
-	console.log(addContact);
-	addButton.addEventListener("submit", (e) => {
-		e.preventDefault();
-		console.log(e);
-		const { first_name, last_name, avatar, email } = Object.values(
-			e.target
-		).reduce((obj, field) => {
-			obj[field.name] = field.value;
-			return obj;
-		}, {});
-		console.log(first_name, last_name, avatar, email);
-		let tempPersonHTML = `
-      <div class="card text-dark bg-info mb-1 col-3 mx-1" >
-        <div class="card-body">
-        <img src="${avatar}" class="img-thumbnail float-end" alt="${first_name}">
-          <h5 class="card-title">${first_name} ${last_name}</h5>
-          <p class="card-text">Laboriosam vel nihil et quas harum aliquam, cupiditate.</p>
-          <a href="mailto:${email}" class="btn btn-primary">Email</a>
-        </div>
-      </div>
-
-    `;
-
-		contactsDIV.innerHTML += tempPersonHTML;
-	});
+  // Load the form to the DOM, comes from createContact.js
+	createContact();
 }
 
-// LOAD THE CHUCK NORRIS API PAGE JS, which comes from fetchChuck.js
+
+// If the page is chuck.html? Load chuck JS, which comes from fetchChuck.js
 
 if (window.location.pathname.includes("chuck")) {
 	/* Get the Chuck Norris fact from the API */

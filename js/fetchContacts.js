@@ -5,7 +5,7 @@ async function fetchContacts() {
 	const data = await response.json();
 
 	// console.log("From fetchContacts", data);
-	// const contacts = data.data;
+	const contacts = data.data;
 	// console.log(contacts);
 
 	contacts.forEach((person) => {
