@@ -23,7 +23,7 @@ async function fetchChuck() {
           </div>
       </div>`;
 
-	console.log(tempJokeHTML);
+	// console.log(tempJokeHTML);
 
 	chuckDIV.innerHTML = tempJokeHTML;
 }

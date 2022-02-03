@@ -1,17 +1,17 @@
 async function fetchContacts() {
 	const contactsDIV = document.getElementById("contacts");
-	//console.log(contactsDIV);
+	// console.log(contactsDIV);
 	const response = await fetch("https://reqres.in/api/users/");
 	const data = await response.json();
 
-	console.log("From fetchContacts", data);
-	const contacts = data.data;
-	console.log(contacts);
+	// console.log("From fetchContacts", data);
+	// const contacts = data.data;
+	// console.log(contacts);
 
 	contacts.forEach((person) => {
-		console.log(person.first_name);
+	// console.log(person);
 
-    let tempPersonHTML = `
+		let tempPersonHTML = `
       <div class="card text-dark bg-info mb-1 col-3 mx-1" >
         <div class="card-body">
         <img src="${person.avatar}" class="img-thumbnail float-end" alt="${person.first_name}">
